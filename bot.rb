@@ -20,7 +20,7 @@ def open_articles(queue)
 end
 
 
-bot = Discordrb::Bot.new token: 'Nzk0ODA3Mjc4NjQ0NjI1NDA4.X_AL9g.C4b09PaFK3BpQ5sfSqRipedGYvY'
+bot = Discordrb::Bot.new token: 'ToKEN'
 
 queue = ["https://www.ptt.cc/bbs/Beauty/index.html"]
 
