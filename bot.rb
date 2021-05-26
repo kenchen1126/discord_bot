@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'rest-client'
 require 'discordrb'
+
 def find_beauty(articles, queue)
     articles.each do |article|
         queue << article["href"].delete_prefix("/bbs/Beauty/") if article.content.match?("[正妹]")
@@ -47,19 +48,12 @@ find_beauty(articles, queue)
 # 找到頁面中圖片的連結
 all_img_urls = open_articles(queue)
 
-bot.message(with_text: '貓') do |e|
-    e.respond '喵'
-end
-bot.message(with_text: "宣庭") do |e|
-    e.respond "大蟀哥"
-end
+
 bot.message(with_text: "beauty") do |e|
     all_img_urls.each do |img|
         e.respond img
     end
 end
-
-
 
 bot.run
 
